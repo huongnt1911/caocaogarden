@@ -1,0 +1,121 @@
+﻿@page "/"
+
+<PageTitle>Trang Chủ</PageTitle>
+
+<MudImage Fluid="true" Src="https://bom.so/r0LM99" Alt="Chào mừng đến với Cào Cào Garden" Class="rounded-lg" />
+<MudText Align="Align.Center"><h1></h1></MudText>
+<br/>
+<br/>
+<br />
+<br />
+<br />
+
+<MudImage Fluid="true" Src="https://bom.so/5dvFtO" Alt="Content Cào Cào Garden" Class="rounded-lg" />
+<br/>
+<br/>
+<br />
+<br />
+<br />
+
+
+<MudCarousel Class="mud-width-full" Style="height:800px;" ShowArrows="@arrows" ShowBullets="@bullets" EnableSwipeGesture="@enableSwipeGesture" AutoCycle="@autocycle" TData="object">
+    <MudCarouselItem Transition="transition">
+        <div class="d-flex" style="width: 100%">
+            <MudImage Fluid="true" Src="https://bom.so/VvyzmI"
+                      Alt="Mony the dog" Elevation="25" Class="rounded-lg" />
+        </div>
+    </MudCarouselItem>
+    <MudCarouselItem Transition="transition">
+        <div class="d-flex" style="width: 100%">
+            <MudImage Fluid="true" Src="https://bom.so/qF5YSU"
+                      Alt="Mony the dog" Elevation="25" Class="rounded-lg" />
+        </div>
+    </MudCarouselItem>
+    <MudCarouselItem Transition="transition">
+        <div class="d-flex" style="width: 100%">
+            <MudImage Fluid="true" Src="https://bom.so/UrNiyZ"
+                      Alt="Mony the dog" Elevation="25" Class="rounded-lg" />
+        </div>
+    </MudCarouselItem>
+</MudCarousel>
+<br/>
+<br />
+<br />
+
+<MudText Align="Align.Center"><h1>SẢN PHẨM BÁN CHẠY</h1></MudText>
+
+<MudGrid>
+    <MudItem md="3">
+        <MudCard>
+            <MudCardMedia Image="https://bom.so/okDYzI" Height="200" />
+            <MudCardContent>
+                <MudText Typo="Typo.h5">Set Sen Đá 01</MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Secondary" aria-label="add to favorite" />
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+    <MudItem md="3">
+        <MudCard>
+            <MudCardMedia Image="https://bom.so/q60Jrr" Height="200" />
+            <MudCardContent>
+                <MudText Typo="Typo.h5">Set Sen Đá 04</MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Secondary" aria-label="add to favorite" />
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+
+    <MudItem md="3">
+        <MudCard>
+            <MudCardMedia Image="https://bom.so/6MiDE2" Height="200" />
+            <MudCardContent>
+                <MudText Typo="Typo.h5">Set Sen Đá 06</MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Secondary" aria-label="add to favorite" />
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+    <MudItem md="3">
+        <MudCard>
+            <MudCardMedia Image="https://bom.so/VXPpuW" Height="200" />
+            <MudCardContent>
+                <MudText Typo="Typo.h5">Set Sen Đá 07</MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Secondary" aria-label="add to favorite" />
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+</MudGrid>
+
+<NavLink href="sanpham">
+    <div class="button-container">
+        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Success">
+            Xem Thêm Sản Phẩm
+        </MudButton>
+    </div>
+</NavLink>
+
+<br />
+<br />
+
+<style>
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+    }
+</style>
+
+@code{
+    private bool arrows = true;
+    private bool bullets = true;
+    private bool enableSwipeGesture = true;
+    private bool autocycle = true;
+    private Transition transition = Transition.Slide;
+}

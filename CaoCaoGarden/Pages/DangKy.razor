@@ -1,0 +1,74 @@
+﻿@using System.ComponentModel.DataAnnotations
+@using MudBlazor
+@inject NavigationManager navigationManager
+
+@page "/dangky"
+
+<PageTitle>Đăng Ký</PageTitle>
+
+<br/>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="login-container">
+    <MudCard Class="m-4" Width="400px">
+        <MudCardContent>
+            <MudText Align="Align.Center"><h1>ĐĂNG KÝ TÀI KHOẢN</h1></MudText>
+            <EditForm Model="@registerModel" OnValidSubmit="HandleValidSubmit">
+                <MudTextField Label="Tên đăng nhập" @bind-Value="registerModel.Username" />
+                <MudTextField Label="Email" @bind-Value="registerModel.Email" />
+                <MudTextField Label="Mật khẩu" @bind-Value="registerModel.Password" Type="InputType.Password" />
+                <br/>
+                <MudButton Type="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary">Đăng ký</MudButton>
+            </EditForm>
+        </MudCardContent>
+    </MudCard>
+</div>
+<style>
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 25vh;
+    }
+</style>
+
+@code {
+    private RegisterModel registerModel = new RegisterModel();
+
+    public class RegisterModel
+    {
+        [Required(ErrorMessage = "Vui lòng nhập tên đăng nhập")]
+        public string Username { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập email")]
+        [EmailAddress(ErrorMessage = "Email không hợp lệ")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập mật khẩu")]
+        [MinLength(6, ErrorMessage = "Mật khẩu phải có ít nhất 6 ký tự")]
+        public string Password { get; set; }
+    }
+
+    private void HandleValidSubmit()
+    {
+        //var user = new User
+        //    {
+        //        Username = registerModel.Username,
+        //        Email = registerModel.Email,
+        //        Password = registerModel.Password
+        //    };
+
+        //DbContext.Users.Add(user);
+        //DbContext.SaveChanges();
+        // Xử lý logic đăng ký tại đây
+        // Ví dụ: gửi yêu cầu đăng ký đến backend, lưu thông tin người dùng vào cơ sở dữ liệu, vv.
+        // Sau khi xử lý xong, bạn có thể chuyển hướng người dùng đến trang thành công hoặc trang chủ.
+        navigationManager.NavigateTo("/");
+    }
+}

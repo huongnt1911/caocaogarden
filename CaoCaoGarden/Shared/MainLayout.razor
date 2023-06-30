@@ -1,0 +1,22 @@
+﻿@inherits LayoutComponentBase
+@using MudBlazor
+
+<PageTitle>Cào Cào Garden</PageTitle>
+
+@*    <main>
+        <TopNavBar></TopNavBar>
+
+        <article class="content px-1" >
+            @Body
+        </article>
+    </main>
+*@
+    <MudAppBar>
+  <MudToolbar>
+    <TopNavBar></TopNavBar>
+  </MudToolbar>
+</MudAppBar>
+
+<div class="content mt-2 px-2">
+    @Body
+</div>

@@ -1,0 +1,100 @@
+﻿@page "/chitietdonhang/{id:int}"
+@attribute [Authorize]
+
+@inject NavigationManager navigationManager
+@inject IProcessOrderUseCase processOrderUseCase
+@inject IViewOrderDetailUseCase ViewOrderDetailUseCase
+
+@using MudBlazor
+<br />
+<br />
+<br />
+<br />
+
+<h3>Chi Tiết Đơn Hàng</h3>
+
+@if (order != null)
+{
+    <p>
+        <b>Thông tin khách hàng:</b>
+    </p>
+    <p>@order.CustomerName</p>
+    <p>@order.CustomerAddress</p>
+    <p>@order.CustomerCity</p>
+    <p>@order.CustomerStateProvince</p>
+    <p>@order.CustomerCountry</p>
+    <br />
+
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in order.LineItems)
+            {
+                <tr>
+                    <MudTh>@item.Product.Name</MudTh>
+                    <MudTh>@item.Product.Price</MudTh>
+                    <MudTh>@item.Quantity</MudTh>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+@*    <MudTable TItem="Product" Items="products">
+    <HeaderContent>
+        <MudTh>Tên sản phẩm</MudTh>
+        <MudTh>Giá</MudTh>
+        <MudTh>Số lượng</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+            <MudTd DataLabel="Tên sản phẩm">@item.Product.Name</MudTd>
+        <MudTd DataLabel="Giá">@context.Price.ToString("c")</MudTd>
+        <MudTd DataLabel="Số lượng">@context.Quantity.ToString()</MudTd>
+    </RowTemplate>
+</MudTable>
+*@
+    <br />
+
+    <MudButton Class="custom-button" Color="Color.Primary" Variant="Variant.Filled" @onclick="HandleProcessOrder">
+        Đánh dấu đơn hàng đã xử lý
+    </MudButton>
+
+
+}
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    private Order order;
+    private AuthenticationState authState;
+
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authStateTask { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        authState = await authStateTask;
+    }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        if (Id > 0)
+        {
+            order = ViewOrderDetailUseCase.Execute(Id);
+        }
+    }
+    private void HandleProcessOrder()
+    {
+        if (order != null && authState != null)
+        {
+            processOrderUseCase.Execute(order.OrderId.Value, authState.User.Identity.Name);
+            navigationManager.NavigateTo("/donhangchuathanhtoan");
+        }
+    }
+}

@@ -1,0 +1,45 @@
+﻿@using System.Globalization;
+@using MudBlazor
+@inject NavigationManager navigationManager
+
+@inject IViewProductUseCase viewProduct
+@inject IAddProductToCartUseCase addProductTocartUseCase
+
+
+@*<div class="card m-2 p-2" style="width: 12rem;">
+    <img src="@product.ImageLink" class="card-img-top" alt="" />
+    <div class="card-body">
+        <h5 class="card-title"><NavLink Href=@($"sanpham/{product.ProductId}")>@product.Name</NavLink></h5>
+        <p class="card-text" style="color:darkred">@product.Price.ToString("c")</p>
+    </div>
+</div>
+*@
+    @*<MudItem md="3">*@
+        <MudCard>
+            <MudCardMedia Image="@product.ImageLink" Height="200" />
+            <MudCardContent>
+                <MudText Typo="Typo.h5"><NavLink Href=@($"sanpham/{product.ProductId}")>@product.Name</NavLink></MudText>
+                <MudText Typo="Typo.h6">@product.Price.ToString("c",CultureInfo.GetCultureInfo("vi-VN"))</MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Secondary" aria-label="add to favorite" />
+                <MudButton Variant="Variant.Text" Color="Color.Primary" @onclick="AddToCart">Thêm vào giỏ hàng</MudButton>
+            </MudCardActions>
+        </MudCard>
+    
+        
+            
+        
+    @*</MudItem>*@
+
+@code {
+    [Parameter]
+    public Product product { get; set; }
+
+
+    private void AddToCart()
+    {
+        addProductTocartUseCase.Execute(product.ProductId);
+        navigationManager.NavigateTo("/sanpham");
+    }
+}

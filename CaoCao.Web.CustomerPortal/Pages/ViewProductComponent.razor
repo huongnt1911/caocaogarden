@@ -1,0 +1,70 @@
+﻿@page "/sanpham/{id:int}"
+@using System.Globalization;
+
+@inject NavigationManager navigationManager
+
+@inject IViewProductUseCase viewProduct
+@inject IAddProductToCartUseCase addProductTocartUseCase
+
+<h3>Chi Tiết Sản Phẩm</h3>
+
+
+<br/>
+<br />
+<br />
+<br />
+
+<MudGrid>
+    <MudItem md="5">
+        <MudCard Align="Align.Center">
+            <MudCardMedia Image="@product.ImageLink" Height="200" />
+            <MudCardContent>
+                <MudText Typo="Typo.h5">@product.Name</MudText>
+                <MudText Typo="Typo.h6">@product.Price.ToString("c",CultureInfo.GetCultureInfo("vi-VN"))</MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Secondary" aria-label="add to favorite" />
+                <MudButton Variant="Variant.Text" Color="Color.Primary" @onclick="AddToCart">Thêm vào giỏ hàng</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+
+</MudGrid>
+
+@*<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <img src="@product.ImageLink" />
+        <h5 class="card-title">@product.Name</h5>
+        <hr />
+        <p>
+            Price: <label style="color:darkred">@product.Price.ToString("c")</label>
+        </p>
+    </div>
+    <button class="btn btn-primary" @onclick="AddToCart">Add To Cart</button>
+</div>
+*@
+<NavLink href="sanpham">
+    <MudButton ButtonType="ButtonType.Button">
+        Quay lại trang sản phẩm
+    </MudButton>
+</NavLink>
+
+@code {
+    private Product product;
+
+    [Parameter]
+    public int Id { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        if (Id > 0)
+            product = viewProduct.Execute(Id);
+    }
+
+    private void AddToCart()
+    {
+        addProductTocartUseCase.Execute(product.ProductId);
+        navigationManager.NavigateTo("/sanpham");
+    }
+}

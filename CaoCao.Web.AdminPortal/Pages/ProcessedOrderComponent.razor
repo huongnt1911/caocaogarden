@@ -1,0 +1,24 @@
+﻿@page "/donhangdaxuly"
+
+@attribute [Authorize]
+
+@inject IViewProcessedOrdersUseCase viewProcessedOrdersUseCase
+<br />
+<br />
+<br />
+<br />
+
+<h3>Đơn hàng đã xử lý</h3>
+
+<br />
+<OrderListComponent Orders="orders"></OrderListComponent>
+
+@code {
+    private IEnumerable<Order> orders;
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        orders = viewProcessedOrdersUseCase.Execute();
+    }
+}
+

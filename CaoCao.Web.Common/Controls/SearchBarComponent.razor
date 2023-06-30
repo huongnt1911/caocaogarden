@@ -1,0 +1,51 @@
+﻿@using MudBlazor
+<br/>
+<br />
+<br />
+<br />
+<div>
+            <MudGrid>
+                <MudItem xs="12" sm="5">
+                    <MudTextField id="filter" Label="Tìm kiếm" @bind-Value="filter" />  
+                </MudItem>
+                <MudItem>
+                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Surface" @onclick="HandleSearch">
+                        <MudIcon Icon="@Icons.Material.Filled.Search"></MudIcon>
+                    </MudButton>
+                </MudItem>
+            </MudGrid>
+</div>
+
+@*<div class="button-container">
+    <MudGrid>
+        <MudItem xs="12" sm="5">
+            <MudTextField id="filter" Label="Tìm kiếm" @bind-Value="filter" />
+        </MudItem>
+        <MudItem>
+            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Surface" @onclick="HandleSearch">
+                <MudIcon Icon="@Icons.Material.Filled.Search"></MudIcon>
+            </MudButton>
+        </MudItem>
+    </MudGrid>
+</div>
+
+<style>
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+</style>
+*@
+@code {
+    private string filter;
+
+    [Parameter]
+    public EventCallback<string> OnSearch { get; set; }
+
+    private void HandleSearch()
+    {
+        OnSearch.InvokeAsync(filter);
+    }
+}

@@ -1,0 +1,461 @@
+﻿@page "/sukien"
+<PageTitle>Sự Kiện</PageTitle>
+
+<MudGrid>
+    <MudItem md="12">
+        <MudCard>
+            <MudCardHeader>
+                <CardHeaderAvatar>
+                    <MudAvatar Color="Color.Secondary">I</MudAvatar>
+                </CardHeaderAvatar>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.body1">Cào Cào Garden</MudText>
+
+                </CardHeaderContent>
+                <CardHeaderActions>
+                    <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
+                </CardHeaderActions>
+            </MudCardHeader>
+            <MudCarousel Class="mud-width-full" Style="height:500px;" AutoCycle="false" TData="object">
+                <BulletTemplate Context="selected">
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Icon="@(selected ? Icons.Material.Filled.CheckCircle : Icons.Material.Filled.Circle)" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </BulletTemplate>
+                <PreviousButtonTemplate>
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Icon="@Icons.Material.Filled.SkipPrevious" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </PreviousButtonTemplate>
+                <NextButtonTemplate>
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Icon="@Icons.Material.Filled.SkipNext" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </NextButtonTemplate>
+                <ChildContent>
+                    <MudCarouselItem Color="@Color.Primary">
+                        <MudCardMedia Image="https://bom.so/ka5njg" Height="600" />
+                    </MudCarouselItem>
+                    <MudCarouselItem Color="@Color.Secondary">
+                        <MudCardMedia Image="https://bom.so/lssVdv" Height="600" />
+                    </MudCarouselItem>
+                    <MudCarouselItem>
+                        <MudCardMedia Image="https://bom.so/e5xLam" Height="600" />
+                    </MudCarouselItem>
+                </ChildContent>
+            </MudCarousel>
+            <MudCardContent>
+                <MudText Typo="Typo.body2">
+                    <h3>Sự kiện tự tay vẽ hình cho những chiếc chậu</h3>
+                    ✨ CHẬU CÂY IN HÌNH #MADE_BY_CÀO_CÀO ✨
+                    <br />
+                    Sau thời gian tìm hiểu thật lâu cuối cùng vườn chúng mình cũng đã thực hiện được rồi đây ạaa ❗️
+                    <br />
+                    • Mời cả nhà cùng ngắm những thành phẩm đáng iu được tự tay chúng mình in lên chậu nhá. Ngoài những hình này ra thì vẫn đang có cơ số chậu xinh sắp được ra mắt đó haaaa 🥰
+                    <br />
+                    🎶 Nhà Cào nhận in chậu theo yêu cầu, in chữ, in logo, ảnh cá nhân - gia đình lên chậu cây ... Đơn hàng để đảm bảo tươm tất và đẹp nhất mọi người vui lòng đặt trước giúp vườn 1 2h nhaaa 🪴
+                    <br />
+                    _____________________________________
+                    <br />
+                    • 19/116 Nguyễn Lộ Trạch, TP Huế
+                    <br />
+                    0783655566
+
+                </MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Default" />
+                <MudIconButton Icon="@Icons.Material.Filled.Share" Color="Color.Default" />
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+
+    <MudItem md="12">
+        <MudCard>
+            <MudCardHeader>
+                <CardHeaderAvatar>
+                    <MudAvatar Color="Color.Secondary">I</MudAvatar>
+                </CardHeaderAvatar>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.body1">Cào Cào Garden</MudText>
+
+                </CardHeaderContent>
+                <CardHeaderActions>
+                    <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
+                </CardHeaderActions>
+            </MudCardHeader>
+            <MudCarousel Class="mud-width-full" Style="height:500px;" AutoCycle="false" TData="object">
+                <BulletTemplate Context="selected">
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Icon="@(selected ? Icons.Material.Filled.CheckCircle : Icons.Material.Filled.Circle)" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </BulletTemplate>
+                <PreviousButtonTemplate>
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Icon="@Icons.Material.Filled.SkipPrevious" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </PreviousButtonTemplate>
+                <NextButtonTemplate>
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Icon="@Icons.Material.Filled.SkipNext" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </NextButtonTemplate>
+                <ChildContent>
+                    <MudCarouselItem Color="@Color.Primary">
+                        <MudCardMedia Image="https://bom.so/Ri05lp" Height="600" />
+                    </MudCarouselItem>
+                    <MudCarouselItem Color="@Color.Secondary">
+                        <MudCardMedia Image="https://bom.so/FiOWtc" Height="600" />
+                    </MudCarouselItem>
+                    <MudCarouselItem>
+                        <MudCardMedia Image="https://bom.so/WYB5no" Height="600" />
+                    </MudCarouselItem>
+                </ChildContent>
+            </MudCarousel>
+            <MudCardContent>
+                <MudText Typo="Typo.body2">
+                    <h3>Sự kiện tham quan Cào Cào Garden </h3>
+                    🌿 Dạo quanh vườn một vòng thôi nào!
+                    <br />
+                    🏡 Địa chỉ: 19/116 Nguyễn Lộ Trạch - Tp. Huế
+                    <br />
+                    KIỆT RẤT RỘNG 2 OTO TRÁNH NHAU THOẢI MÁI
+                    <br />
+                    📞 0783655566 - 0702500391
+                    <br />
+                    ❓ HƯỚNG DẪN ĐI ĐẾN VƯỜN BẰNG ĐƯỜNG TỐ HỮU (chúng ta chỉ mất tầm 3 - 5 phút để đi từ đường Bà Triệu đến Vườn, nếu đi theo cách này): Đi đường Tố Hữu => Rẽ vào đường bên hông của Trường Nguyễn Tri Phương (đường Vũ Xuân Chiêm) => Chung cư Vicoland (toà nhà 7 tầng) - rẽ vào đường Hoàng Thế Thiện đi tầm 100m có quán cà phê Ghế Đẩu =>  Đường Hoàng Lanh  => Rẽ vào đường số 7 (đường này chính là kiệt 116 Nguyễn Lộ Trạch ạ
+                    <br />
+                    📌 HOẶC MỌI NGƯỜI TÌM GOOGLE MAP “cào cào garden” để biết được vị trí chính xác của Vườn và đi theo hướng dẫn của google cho tiện và dễ hiểu nha ~
+                    <br />
+                    Nếu có khó khăn gì trong việc tìm đường mọi người cứ gọi cho mình qua số 0783655566 mình chỉ và dẫn vào luôn nha ^^
+
+                </MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Default" />
+                <MudIconButton Icon="@Icons.Material.Filled.Share" Color="Color.Default" />
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+
+    <MudItem md="12">
+        <MudCard>
+            <MudCardHeader>
+                <CardHeaderAvatar>
+                    <MudAvatar Color="Color.Secondary">I</MudAvatar>
+                </CardHeaderAvatar>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.body1">Cào Cào Garden</MudText>
+
+                </CardHeaderContent>
+                <CardHeaderActions>
+                    <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
+                </CardHeaderActions>
+            </MudCardHeader>
+            <MudCarousel Class="mud-width-full" Style="height:500px;" AutoCycle="false" TData="object">
+                <BulletTemplate Context="selected">
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Icon="@(selected ? Icons.Material.Filled.CheckCircle : Icons.Material.Filled.Circle)" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </BulletTemplate>
+                <PreviousButtonTemplate>
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Icon="@Icons.Material.Filled.SkipPrevious" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </PreviousButtonTemplate>
+                <NextButtonTemplate>
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Icon="@Icons.Material.Filled.SkipNext" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </NextButtonTemplate>
+                <ChildContent>
+                    <MudCarouselItem Color="@Color.Primary">
+                        <MudCardMedia Image="https://bom.so/gqBKIx" Height="500" />
+                    </MudCarouselItem>
+                    <MudCarouselItem Color="@Color.Secondary">
+                        <MudCardMedia Image="https://bom.so/GXW0je" Height="900" />
+                    </MudCarouselItem>
+                    <MudCarouselItem>
+                        <MudCardMedia Image="https://bom.so/MR7Ppg" Height="600" />
+                    </MudCarouselItem>
+                </ChildContent>
+            </MudCarousel>
+            <MudCardContent>
+                <MudText Typo="Typo.body2">
+                    <h3>Sự kiện món quà tri ân ý nghĩa </h3>
+                    <br />
+                    • Những chậu xinh xắn, nhỏ bé được các bạn tin yêu lựa chọn để trao gửi yêu thương đến thầy cô của mình trong ngày tốt nghiệp ra trường 🌿
+                    <br />
+                    • Ta hay ví sự nghiệp dạy học giống như trồng người và thầy cô chính là người gieo mầm tương lai cho thế hệ học sinh, sinh viên của mình ✨
+                    <br />
+                    • Món quà là một chậu cây như là một lời nhắn nhủ cảm ơn thầy cô đã nuôi dưỡng kiến thức, dìu dắt chúng em trong 4 năm qua. Hi vọng thầy cô tiếp tục vững bước trong sự nghiệp mai sau!
+                    <br />
+                    _____________________________________
+                    <br />
+                    • 19/116 Nguyễn Lộ Trạch, TP Huế
+                    <br />
+                    0783655566
+
+                </MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Default" />
+                <MudIconButton Icon="@Icons.Material.Filled.Share" Color="Color.Default" />
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+
+    <MudItem md="12">
+        <MudCard>
+            <MudCardHeader>
+                <CardHeaderAvatar>
+                    <MudAvatar Color="Color.Secondary">I</MudAvatar>
+                </CardHeaderAvatar>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.body1">Cào Cào Garden</MudText>
+
+                </CardHeaderContent>
+                <CardHeaderActions>
+                    <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
+                </CardHeaderActions>
+            </MudCardHeader>
+            <MudCarousel Class="mud-width-full" Style="height:500px;" AutoCycle="false" TData="object">
+                <BulletTemplate Context="selected">
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Icon="@(selected ? Icons.Material.Filled.CheckCircle : Icons.Material.Filled.Circle)" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </BulletTemplate>
+                <PreviousButtonTemplate>
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Icon="@Icons.Material.Filled.SkipPrevious" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </PreviousButtonTemplate>
+                <NextButtonTemplate>
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Icon="@Icons.Material.Filled.SkipNext" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </NextButtonTemplate>
+                <ChildContent>
+                    <MudCarouselItem Color="@Color.Primary">
+                        <MudCardMedia Image="https://bom.so/lOSPrI" Height="500" />
+                    </MudCarouselItem>
+                    <MudCarouselItem Color="@Color.Secondary">
+                        <MudCardMedia Image="https://bom.so/FKASkD" Height="900" />
+                    </MudCarouselItem>
+                    <MudCarouselItem>
+                        <MudCardMedia Image="https://bom.so/HRgFOH" Height="600" />
+                    </MudCarouselItem>
+                </ChildContent>
+            </MudCarousel>
+            <MudCardContent>
+                <MudText Typo="Typo.body2">
+                    <h3>Sự kiện món quà tri ân ý nghĩa </h3>
+                    <br />
+                    • Những chậu xinh xắn, nhỏ bé được các bạn tin yêu lựa chọn để trao gửi yêu thương đến thầy cô của mình trong ngày tốt nghiệp ra trường 🌿
+                    <br />
+                    • Ta hay ví sự nghiệp dạy học giống như trồng người và thầy cô chính là người gieo mầm tương lai cho thế hệ học sinh, sinh viên của mình ✨
+                    <br />
+                    • Món quà là một chậu cây như là một lời nhắn nhủ cảm ơn thầy cô đã nuôi dưỡng kiến thức, dìu dắt chúng em trong 4 năm qua. Hi vọng thầy cô tiếp tục vững bước trong sự nghiệp mai sau!
+                    <br />
+                    _____________________________________
+                    <br />
+                    • 19/116 Nguyễn Lộ Trạch, TP Huế
+                    <br />
+                    0783655566
+
+                </MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Default" />
+                <MudIconButton Icon="@Icons.Material.Filled.Share" Color="Color.Default" />
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+
+    <MudItem md="12">
+        <MudCard>
+            <MudCardHeader>
+                <CardHeaderAvatar>
+                    <MudAvatar Color="Color.Secondary">I</MudAvatar>
+                </CardHeaderAvatar>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.body1">Cào Cào Garden</MudText>
+
+                </CardHeaderContent>
+                <CardHeaderActions>
+                    <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
+                </CardHeaderActions>
+            </MudCardHeader>
+            <MudCarousel Class="mud-width-full" Style="height:500px;" AutoCycle="false" TData="object">
+                <BulletTemplate Context="selected">
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Icon="@(selected ? Icons.Material.Filled.CheckCircle : Icons.Material.Filled.Circle)" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </BulletTemplate>
+                <PreviousButtonTemplate>
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Icon="@Icons.Material.Filled.SkipPrevious" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </PreviousButtonTemplate>
+                <NextButtonTemplate>
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Icon="@Icons.Material.Filled.SkipNext" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </NextButtonTemplate>
+                <ChildContent>
+                    <MudCarouselItem Color="@Color.Primary">
+                        <MudCardMedia Image="https://bom.so/wrFCD2" Height="500" />
+                    </MudCarouselItem>
+                    <MudCarouselItem Color="@Color.Secondary">
+                        <MudCardMedia Image="https://bom.so/m6Hww5" Height="900" />
+                    </MudCarouselItem>
+                    <MudCarouselItem>
+                        <MudCardMedia Image="https://bom.so/fElKr3" Height="600" />
+                    </MudCarouselItem>
+                </ChildContent>
+            </MudCarousel>
+            <MudCardContent>
+                <MudText Typo="Typo.body2">
+                    <h3>VIẾT CHO NGÀY CỦA MẸ 𝟏𝟒/𝟓 ❤️ </h3>
+                    <br />
+                    Loay hoay với cuộc sống bộn bề, đã có ai từng hỏi: “Ước mơ của mẹ là gì?”. Ngày qua ngày, với những công việc lặp đi lặp ai, chẳng còn mấy ai để ý đến những câu hỏi ‘dư thừa’ như thế. Và suýt chút nữa, mẹ cũng quên mình đã từng như thế nào, đã từng mơ ước những gì …
+                    <br />
+                    • Những cô gái mộng mơ khi còn trẻ, ai chẳng muốn tung tăng đó đây, đi khắp chân trời góc bể và lựa chọn cho mình một công việc xứng đáng! Nhưng với mẹ chúng mình thì lại khác, mẹ sinh ra với điều kiện gia đình không khá giả, ông ngoại lại mất sớm khi mẹ mình còn nhỏ nên cuộc sống xô bồ đã đưa đẩy mẹ đến cuộc sống hôn nhân sớm khi từ 20 tuổi…
+                    <br />
+                    • Rồi dần 1 ngày trong mẹ có 2 đứa mình. Hì, cô gái 20 tuổi mang trong mình một bào thai sinh đôi khi trong tay chẳng có sự nghiệp gì. Ba cùng mẹ đã tần tảo sớm hôm cày bừa từ bó rau muống, từng bao xi măng, từng cục gạch và củ khoai củ sắn để nuôi chị em mình đi đến hoàn thành chặng đường 12 năm đèn sách!
+                    <br />
+                    Thực tế quá khắc nghiệt, vất vả làm con người ta quên đi những mộng mơ trong đầu mà vốn dĩ ai cũng có. Mẹ cũng quên dần mẹ muốn có gì và sẽ làm gì cho bản thân, cứ chật vật bận lo mai sẽ có một bữa cơm ngon lành cho gia đình, có đủ tiền để trang trải học phí cho các con…
+                    <br />
+                    • Thế giới ngoài kia bao la rộng lớn, tất bật hối hả ngược lại ‘thế giới của mẹ’ chỉ gói gọn là các con cùng củ khoai củ sắn. Và giờ đây sau ngừng ấy năm (cụ thể là 26 năm), chúng mình_ những đứa con thân yêu của mẹ đã tìm ước mơ cho riêng mình. Tự bản thân chúng mình luôn hứa sẽ luôn cố gắng nổ lực hết mình, sẽ theo đuổi ước mơ mãnh liệt thay phần cả mẹ. Vì mình biết rằng, nhìn thấy những đứa sống thật hạnh phúc & thành công chính là niềm mong ước ngay hiện tại của mẹ ❤️
+                    <br />
+                    • Không riêng gì ngày của mẹ mà mình viết ra những lời như này, vì thực sự tình cảm to lớn không thể nào chỉ diễn tả qua đôi ba câu nói. Quá trình gần 7 năm ròng rã xây dựng Cào Cào Garden từ con số 0, chính là bằng chứng cho tấm lòng mình dành cho mẹ. Chúng mình đã làm không ngừng nghỉ, đã học hỏi mỗi ngày với tất cả khả năng vốn có để chỉ mong một ngày gia đình sẽ tự hào về 2 con gái bé bỏng. Lựa chọn ngành sư phạm để 4 năm ĐH không tốn học phí, lựa chọn công việc làm thêm quán nhậu, lao công, shop áo quần, giao hàng,… rồi chắt chiu từng đồng để ‘khởi nghiệp’ cây cối.  Ngay hiện tại, khi Vườn đã ổn định và có chỗ đứng trong lòng mọi người mình mới dám viết ra tâm tư bản thân…
+                    <br />
+                    • Dù có đôi lúc lầm đường, lạc lối nhưng đó sẽ là bài học kinh nghiệm. Sau tất cả, ‘trưởng thành’ là món quà tuyệt vời nhất mà những đứa con gửi đến người mẹ, gia đình của mình …đúng không nè?
+                    <br />
+                    • ‘Con đường chúng mình đi tìm món quà’ có xa thật, có gập gềnh thật nhưng hiện tại mẹ rất tự hào về 2 đứa con, về thành quả ‘Cào Cào Garden’ mà 2 con bé tạo ra ^v^. Hi vọng mọi người mãi thương, mãi ủng hộ Vườn để chúng mình được dành món quà trọn vẹn nhất gửi đến mẹ nha ^^
+                    <br />
+                    • Mong rằng, câu chuyện của mình sẽ tiếp thêm cho cả nhà chút động lực. Cùng cố gắng thêm nữa nào! Những đứa con ngoan như chúng mình!!!
+                    <br />
+                    Yêu Mẹ 🌷
+
+                </MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Default" />
+                <MudIconButton Icon="@Icons.Material.Filled.Share" Color="Color.Default" />
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+
+
+    <MudItem md="12">
+        <MudCard>
+            <MudCardHeader>
+                <CardHeaderAvatar>
+                    <MudAvatar Color="Color.Secondary">I</MudAvatar>
+                </CardHeaderAvatar>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.body1">Cào Cào Garden</MudText>
+
+                </CardHeaderContent>
+                <CardHeaderActions>
+                    <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
+                </CardHeaderActions>
+            </MudCardHeader>
+            <MudCarousel Class="mud-width-full" Style="height:500px;" AutoCycle="false" TData="object">
+                <BulletTemplate Context="selected">
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Icon="@(selected ? Icons.Material.Filled.CheckCircle : Icons.Material.Filled.Circle)" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </BulletTemplate>
+                <PreviousButtonTemplate>
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Icon="@Icons.Material.Filled.SkipPrevious" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </PreviousButtonTemplate>
+                <NextButtonTemplate>
+                    <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                        <span class="mud-icon-button-label">
+                            <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Icon="@Icons.Material.Filled.SkipNext" Color="@Color.Inherit" />
+                        </span>
+                    </div>
+                </NextButtonTemplate>
+                <ChildContent>
+                    <MudCarouselItem Color="@Color.Primary">
+                        <MudCardMedia Image="image/sk5.jpg" Height="500" />
+                    </MudCarouselItem>
+                    <MudCarouselItem Color="@Color.Secondary">
+                        <MudCardMedia Image="image/sk5-1.jpg" Height="500" />
+                    </MudCarouselItem>
+                    <MudCarouselItem>
+                        <MudCardMedia Image="image/sk5-2.jpg" Height="600" />
+                    </MudCarouselItem>
+                </ChildContent>
+            </MudCarousel>
+            <MudCardContent>
+                <MudText Typo="Typo.body2">
+                    <h3>〰️ Đồng giá sen bầu 15k - mua 5 tặng 1 〰️</h3>
+                    <br />
+                    • 𝑵𝒉𝒖̛̃𝒏𝒈 𝒃𝒐̂𝒏𝒈 𝒔𝒆𝒏 𝒙𝒊𝒏𝒉 𝒏𝒉𝒐̉ 𝒍𝒂̣𝒊 𝒗𝒆̂̀ 🌼
+                    <br />
+                    🌿 Chào hè rực rỡ nhà Cào lại cập bến về thêm nhiều bé sen màu xịn lắm í !
+                    <br />
+                    🌿 Cứ ghé vườn Cào Cào là lúc nào cũng tha hồ sen trong vườn, kiểu gì cũng rinh zề được vài túi nháaaaaaa ^^~
+                    <br />
+                    _________________________________
+                    <br />
+                    • 19/116 Nguyễn Lộ Trạch, TP Huế
+                    <br />
+                    0783655566
+
+                </MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Default" />
+                <MudIconButton Icon="@Icons.Material.Filled.Share" Color="Color.Default" />
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+
+
+</MudGrid>
+
+
+
+@code {
+
+}

@@ -1,0 +1,59 @@
+﻿@using MudBlazor
+
+@*<MudTable Items="Orders" class="table">
+    <HeaderContent>
+        <MudTh>Ngày Đặt</MudTh>
+        <MudTh>Số Hóa Đơn</MudTh>
+        <MudTh>Quốc Gia</MudTh>
+        <MudTh>Tỉnh</MudTh>
+        <MudTh>Thành Phố</MudTh>
+        <MudTh>Tên Khách Hàng</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd>@context.DatePlaced</MudTd>
+        <MudTd><MudLink Href="">@context.OrderId</MudLink></MudTd>
+        <MudTd>@context.CustomerCountry</MudTd>
+        <MudTd>@context.CustomerStateProvince</MudTd>
+        <MudTh>@context.CustomerCity</MudTh>
+        <MudTh>@context.CustomerName</MudTh>
+    </RowTemplate>
+
+</MudTable>
+*@
+
+@*@code {
+    [Parameter]
+    public IEnumerable<Order> Orders { get; set; }
+}
+*@
+
+
+@if (Orders != null && Orders.Count() > 0)
+{
+    
+
+    <table class="table">
+        <thead>
+            <tr>
+                <MudTh>Ngày Đặt</MudTh>
+                <MudTh>Số Hóa Đơn</MudTh>
+                <MudTh>Quốc Gia</MudTh>
+                <MudTh>Tỉnh</MudTh>
+                <MudTh>Thành Phố</MudTh>
+                <MudTh>Tên Khách Hàng</MudTh>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Orders)
+            {
+                <OrderItemComponent Order="order"></OrderItemComponent>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter]
+    public IEnumerable<Order> Orders { get; set; }
+
+}

@@ -1,0 +1,23 @@
+﻿@page "/donhangchuathanhtoan"
+@page "/admin"
+
+@attribute [Authorize]
+@inject IViewOutstandingOrdersUseCase viewOutstandingOrdersUseCase
+
+<br />
+<br />
+<br />
+<br />
+
+<h3>Đơn hàng chưa thanh toán</h3>
+<br />
+<OrderListComponent Orders="orders"></OrderListComponent>
+
+@code {
+    private IEnumerable<Order> orders;
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        orders = viewOutstandingOrdersUseCase.Execute();
+    }
+}

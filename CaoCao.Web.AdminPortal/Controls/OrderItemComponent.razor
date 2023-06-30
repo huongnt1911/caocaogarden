@@ -1,0 +1,44 @@
+﻿@using MudBlazor
+
+@if (Order != null)
+{
+    @*<div class="login-container">
+        <MudItem xs="12" sm="5">
+            <MudCard Class="pa-4 mud-height-full">
+                <MudText Align="Align.Center"><h3>THÔNG TIN KHÁCH HÀNG</h3></MudText>
+                <MudCardContent>
+
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+    </div>*@
+
+    <tr>
+        <td>
+            @if (Order.DatePlaced.HasValue)
+            {
+                @Order.DatePlaced.Value.ToString("yyy-MM-dd")
+            }
+        </td>
+        <td>
+            @if (!Order.DateProcessed.HasValue)
+            {
+                <NavLink href="@($"chitietdonhang/{Order.OrderId}")">
+                    @Order.OrderId
+                </NavLink>
+            }
+            else
+                @Order.OrderId
+
+            </td>
+            <td>Quốc Gia: @Order.CustomerCountry</td>
+            <td>Tỉnh: @Order.CustomerStateProvince</td>
+            <td>Thành Phố: @Order.CustomerCity</td>
+            <td>Tên Khách Hàng: @Order.CustomerName</td>
+        </tr>
+}
+
+@code {
+    [Parameter]
+    public Order Order { get; set; }
+}

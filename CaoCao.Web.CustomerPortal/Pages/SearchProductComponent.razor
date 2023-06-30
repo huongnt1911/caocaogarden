@@ -1,0 +1,40 @@
+﻿@page "/sanpham"
+<PageTitle>Sản Phẩm</PageTitle>
+
+@inject ISearchProductUseCase searchProduct
+
+<SearchBarComponent OnSearch="HandleSearch"></SearchBarComponent>
+<br/>
+<br/>
+
+@if(products != null && products.Count() > 0)
+{
+    <div class="row">
+        @foreach(var product in products)
+        {
+            <ProductCardComponent product="product"></ProductCardComponent>
+        }
+    </div>
+}
+else
+{
+    <text>No Products Found.</text>
+}
+
+@code {
+    private IEnumerable<Product> products;
+
+
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        products = searchProduct.Execute(null);
+    }
+
+    private void HandleSearch(string filter)
+    {
+        products = searchProduct.Execute(filter);
+    }
+}

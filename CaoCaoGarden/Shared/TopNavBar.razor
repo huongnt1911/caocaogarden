@@ -1,0 +1,59 @@
+﻿@inherits LayoutComponentBase
+
+
+@*<MudDialogProvider />
+<MudSnackbarProvider />*@
+
+<MudLayout>
+    <MudAppBar Elevation="0">
+        @*<MudSpacer />*@
+        <MudNavLink Href="">
+            <MudAvatar>
+                <MudImage Style="height:70px; width:70px; font-size:2rem;" Src="https://bom.so/UIzuyH">
+                </MudImage>
+            </MudAvatar>
+        </MudNavLink>
+        
+        <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Trang Chủ</MudNavLink>
+        <MudNavLink Href="sanpham" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.LocalFlorist">Sản Phẩm</MudNavLink>
+        <MudNavLink Href="gioithieu" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.FavoriteBorder">Giới Thiệu</MudNavLink>
+        <MudNavLink Href="sukien" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.PeopleOutline">Sự Kiện</MudNavLink>
+        <MudNavLink Href="lienhe" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.PeopleOutline">Liên Hệ</MudNavLink>
+        <MudNavLink Href="logout" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Feedback">Logout</MudNavLink>
+        <MudNavLink class="nav-link" href="giohang">
+            <CaoCao.Web.CustomerPortal.Controls.CartComponent></CaoCao.Web.CustomerPortal.Controls.CartComponent>
+        </MudNavLink>
+        @*<MudSpacer />*@
+        <MudIconButton Icon="@Icons.Material.Filled.ChangeCircle" Color="Color.Inherit" Href="donhangchuathanhtoan" />
+        <MudIconButton Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Inherit" Href="donhangdaxuly" />
+
+        <MudIconButton Icon="@Icons.Material.Filled.AccountCircle" Color="Color.Inherit" Href="dangnhap"  />
+    </MudAppBar>
+    <MudMainContent>
+        <MudContainer MaxWidth="MaxWidth.Large" Class="my-16 pt-16">
+            @Body
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+
+<MudThemeProvider Theme="_currentTheme" />
+
+@code {
+    bool _drawerOpen = true;
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+
+    private MudTheme _currentTheme = new MudTheme()
+        {
+            Palette = new Palette
+            {
+                AppbarBackground = "#FFB2B2",
+
+            },
+        };
+    string searchString;
+}

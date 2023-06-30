@@ -1,0 +1,98 @@
+﻿@using Microsoft.AspNetCore.Components.Forms
+@using MudBlazor
+
+@if (customer != null)
+{
+    <br/>
+    <br />
+    <br />
+    <br/>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <EditForm Model="customer" class="form-line" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <ValidationSummary></ValidationSummary>
+
+        <div class="login-container">
+
+            <MudItem xs="12" sm="5">
+                <MudCard Class="pa-4 mud-height-full">
+                    <MudText Align="Align.Center"><h3>THÔNG TIN KHÁCH HÀNG</h3></MudText>
+
+                    <MudCardContent>
+                        <div class="form-group">
+                            <lable for="name">Tên</lable>
+                            <MudTextField id="name" Label="" @bind-Value="customer.CustomerName" />
+                            @*<InputText id="name" @bind-Value="customer.CustomerName" class="form-control"></InputText>*@
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <lable for="address">Địa Chỉ</lable>
+                            <MudTextField id="name" Label="" @bind-Value="customer.CustomerAddress" />
+                            @*<InputText id="name" @bind-Value="customer.CustomerAddress" class="form-control"></InputText>*@
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <lable for="city">Thành Phố</lable>
+                            <MudTextField id="name" Label="" @bind-Value="customer.CustomerCity" />
+                           @* <InputText id="name" @bind-Value="customer.CustomerCity" class="form-control"></InputText>*@
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <lable for="province">Tỉnh</lable>
+                            <MudTextField id="name" Label="" @bind-Value="customer.CustomerStateProvince" />
+                            @*<InputText id="name" @bind-Value="customer.CustomerStateProvince" class="form-control"></InputText>*@
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <lable for="country">Quốc Gia</lable>
+                            <MudTextField id="name" Label="" @bind-Value="customer.CustomerCountry" />
+                            @*<InputText id="name" @bind-Value="customer.CustomerCountry" class="form-control"></InputText>*@
+                        </div>
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary">
+                            Đặt hàng
+                        </MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+        </div>
+        
+        <style>
+            .login-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 25vh;
+            }
+        </style>
+@*        <button type="submit" class="btn btn-primary">Đặt hàng</button>
+*@    </EditForm>
+}
+
+@code {
+    private CustomerViewModel customer;
+
+    [Parameter]
+    public EventCallback<CustomerViewModel> OnCustomerInfoSubmitted { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        customer = new CustomerViewModel();
+    }
+
+    private void HandleValidSubmit()
+    {
+        OnCustomerInfoSubmitted.InvokeAsync(customer);
+    }
+}

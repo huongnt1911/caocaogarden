@@ -1,0 +1,64 @@
+﻿@inject NavigationManager navigationManager
+@using MudBlazor
+
+@using System.ComponentModel.DataAnnotations
+
+<br />
+<br />
+<br />
+<br />
+<MudText Align="Align.Center"><h1>ĐĂNG NHẬP TÀI KHOẢN</h1></MudText>
+<br />
+
+@if (loginViewModel != null)
+{
+        <EditForm Model="loginViewModel" OnValidSubmit="HandleValidSubmit" class="form-line">
+            <DataAnnotationsValidator></DataAnnotationsValidator>
+            <ValidationSummary></ValidationSummary>
+        <div class="login-container">
+        <MudItem xs="12" sm="5">
+                <MudCard Class="pa-4 mud-height-full">
+                    <MudCardContent>
+                        <MudTextField id="name" Label="Tên Đăng Nhập" @bind-Value="loginViewModel.UserName" />
+                        <MudTextField id="password" Label="Mật Khẩu" @bind-Value="loginViewModel.Password" InputType="InputType.Password" />
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto" Href="/dangky">
+                            Bạn chưa có tài khoản?
+                        </MudButton>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary">
+                            Đăng Nhập
+                        </MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+            <br />
+        </div>
+
+        <style>
+            .login-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 25vh;
+            }
+        </style>
+        </EditForm>
+}
+
+@code {
+    private LoginViewModel loginViewModel;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        loginViewModel = new LoginViewModel();
+    }
+    private void HandleValidSubmit()
+    {
+        navigationManager.NavigateTo($"/authenticate?user={loginViewModel.UserName}&pwd={loginViewModel.Password}", true);
+    }
+}

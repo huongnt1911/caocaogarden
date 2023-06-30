@@ -1,0 +1,107 @@
+﻿@using System.ComponentModel.DataAnnotations
+
+
+
+@page "/lienhe"
+
+
+
+<PageTitle>Liên Hệ</PageTitle>
+
+
+    <br />
+    <br />
+    <br />
+<br />
+
+
+@*<div>
+    <h1>THÔNG TIN LIÊN HỆ</h1>
+</div>
+<br />
+<h5>
+    Shop Cào Cào Garden
+    <br />
+    Địa Chỉ   : 19/116 Nguyễn Lộ Trạch, Thành phố Huế, tỉnh Thừa Thiên Huế, Việt Nam
+    <br />
+    Số Điện Thoại: 078 365 5566
+    <br />
+*@    <MudIconButton Icon="@Icons.Custom.Brands.Facebook" Color="Color.Inherit" Link="https://www.facebook.com/caocaogarden" Target="_blank" />
+    Facebook: <MudLink Href="https://www.facebook.com/caocaogarden" >Cào Cào Garden</MudLink>
+
+    <br />
+    <MudIconButton Icon="@Icons.Custom.Brands.Instagram" Color="Color.Inherit" Link="https://www.instagram.com/caocao.garden/" Target="_blank" />
+    Instagram: <MudLink Href="https://www.instagram.com/caocao.garden/" >Cào Cào Garden</MudLink>
+    <br />
+    <br />
+@*</h5>*@
+
+
+<EditForm Model="@model" OnValidSubmit="OnValidSubmit">
+    <DataAnnotationsValidator />
+    <MudGrid>
+        <MudItem xs="12" sm="7">
+            <MudCard>
+                <MudCardContent>
+                    <MudTextField Label="Họ và Tên" HelperText=""
+                                  @bind-Value="model.Username" For="@(() => model.Username)" />
+                    <MudTextField Label="Email" Class="mt-3"
+                                  @bind-Value="model.Email" For="@(() => model.Content)" />
+                    <MudTextField Label="Nội dung tin nhắn" HelperText=""
+                                  @bind-Value="model.Content" For="@(() => model.Content)" />
+
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Gửi</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12">
+            <MudText Typo="Typo.body2" Align="Align.Center">
+
+            </MudText>
+        </MudItem>
+    </MudGrid>
+</EditForm>
+<br />
+<br />
+<br />
+<MudLink Href="https://bom.so/oWRkHt" Target="_blank">
+    Xem trên bản đồ
+</MudLink>
+<br />
+<MudImage Fluid="true" Src="https://bom.so/kj9Pji" Alt="Map Cào Cào" Class="rounded-lg" />
+<MudText Align="Align.Center"><h1></h1></MudText>
+<br />
+
+@code {
+    RegisterAccountForm model = new RegisterAccountForm();
+    bool success;
+
+    public class RegisterAccountForm
+    {
+        [Required]
+        public string Username { get; set; }
+
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        [Required]
+        public string Content { get; set; }
+
+
+    }
+
+    private void OnValidSubmit(EditContext context)
+    {
+        success = true;
+        StateHasChanged();
+    }
+
+}
+
+
+
+
+

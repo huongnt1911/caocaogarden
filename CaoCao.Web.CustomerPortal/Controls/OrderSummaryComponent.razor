@@ -1,0 +1,84 @@
+﻿@using System.Globalization;
+@inject NavigationManager navigationManager
+
+<div class="card m-2" style="width: 25rem;">
+    <div class="card-body">
+        
+        <br/>
+        <h5 class="card-title"> TỔNG ĐƠN HÀNG</h5>
+        <br />
+        <div class="card-text d-flex justify-content-between">
+            <div>
+                Sản Phẩm (@itemsCount):
+            </div>
+            <div>
+                @itemsTotalPrice.ToString("c",CultureInfo.GetCultureInfo("vi-VN"))
+            </div>
+        </div>
+        <br />
+        <div class="card-text d-flex justify-content-between">
+            <div>
+                Vận chuyển & Xử lý:
+            </div>
+            <div>
+                <text>0đ</text>
+            </div>
+        </div>
+        <br />
+        <div class="card-text d-flex justify-content-between">
+            <div>
+                Thuế ước tính:
+            </div>
+            <div>
+                <text>0đ</text>
+            </div>
+        </div>
+        <hr />
+        <br />
+        <div class="card-text d-flex justify-content-between" style="color:darkred">
+            <div>
+                <b>Tổng cộng đơn hàng:</b>
+            </div>
+            <div>
+                <b>@itemsTotalPrice.ToString("c",CultureInfo.GetCultureInfo("vi-VN"))</b>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="col">
+        @if (!HidePlaceOrder)
+        {
+            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" @onclick="PlaceOrder">
+                Đặt Hàng Ngay
+            </MudButton>
+            @*<button class="button btn-primary" @onclick="PlaceOrder">Đặt hàng ngay</button>*@
+        }
+    </div>
+</div>
+
+
+@code {
+    int itemsCount = 0;
+    double itemsTotalPrice = 0;
+
+    [Parameter]
+    public Order order { get; set; }
+
+    [Parameter]
+    public bool HidePlaceOrder { get; set; } = false;
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        if (order != null)
+        {
+            itemsCount = order.LineItems.Count;
+            itemsTotalPrice = 0;
+            order.LineItems.ForEach(x => itemsTotalPrice += x.Price * x.Quantity);
+        }
+    }
+    private void PlaceOrder()
+    {
+        navigationManager.NavigateTo("/dathang");
+    }
+}
